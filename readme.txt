@@ -1,5 +1,5 @@
 /* 
-**	Custom MultiSelect Picklist	 asd
+**	Custom MultiSelect Picklist
 */
 
 Functional purpose: Create a visual force page to allow for selection of greater than 150 entries and write the selections back to the originating lead once done.  
