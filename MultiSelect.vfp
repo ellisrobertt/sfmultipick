@@ -1,0 +1,18 @@
+<apex:page controller="MultiSelectController">
+   <apex:form >
+        <apex:pageBlock title="Countries">
+            <c:MultiSelectPicklist leftLabel="Available Countries"
+                leftOptions="{!allCountries}"
+                rightLabel="Selected Countries"
+                rightOptions="{!selectedCountries}"
+                size="14"
+                width="150px"/>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}" status="closer" rerender="buttons"/>
+                <apex:commandButton onclick="history.go(-1);" value="Back" />
+                <apex:actionStatus startText="(Saving...)" stopText="" onstop="javascript:window.close();" id="closer"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:outputText >{!message}</apex:outputText>
+</apex:page>
