@@ -2,14 +2,14 @@
 **	Custom MultiSelect Picklist
 */
 
-Functional purpose: Create a visual force page to allow for selection of greater than 150 entries and write the selections back to the originating lead once done.  
+Functional purpose: Create a visual force page to allow for selection of greater than 150 entries and write the selections back to a long text field on the originating lead.  
 
 
 Overview of how it works:  Link to VF page is clicked in Lead record.  Lead ID is passed as an apex page variable to the multiselect VF page. The code checks if any coutries were previously selected and builds the All coutries and selected countries lists as the page is generated, using the Country object records as its source. User can then interact with the lists to remove or add countries as needed.  When done, and save is clicked, it converts the selected coutries to a string and writes it back to the lead id that was originally passed when the page was opened.    
    
 
 Implementation requirements (as designed) - 
-	Custom Object - Country__c to serve as a list of all countries.					    
+	Custom Object - Country__c to serve as a list of all countries.	'Name' is the only needed field.
 	Custom long text field on Lead - Selected_Countries_List__c to store selected countries				    
 	Custom formula (text) field on Lead - Country_Select__c with the following formula: 								hyperlink("/apex/MultiSelect?Id="&Id,"Click to add or update selected countries",'_self')
 
